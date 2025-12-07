@@ -10,7 +10,7 @@ const normalizeLevel = (level) => {
 };
 
 const logLevel = normalizeLevel(process.env.LOG_LEVEL);
-const LOG_DIRECTORY = path.join(process.cwd(), 'logs');
+const LOG_DIRECTORY = path.join('/tmp/logs');
 const LOG_FILE_PATH = path.join(LOG_DIRECTORY, 'app.log');
 
 let logStream;
