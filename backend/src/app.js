@@ -38,6 +38,8 @@ app.use(requestLogger);
 
 app.use('/auth', authRouter);
 app.use('/api', authenticate, sqlRouter);
+app.use("/logs", express.static("/logs"));
+
 
 app.use(errorHandler);
 
