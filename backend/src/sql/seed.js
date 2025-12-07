@@ -92,6 +92,9 @@ export const seedSandboxDatabase = async () => {
     try {
         await client.query('BEGIN');
 
+        await client.query(`CREATE SCHEMA IF NOT EXISTS playground;`);
+        await client.query(`SET search_path TO playground;`);
+
         await client.query(`CREATE TABLE IF NOT EXISTS students (
       id SERIAL PRIMARY KEY,
       name TEXT NOT NULL,
