@@ -1,0 +1,213 @@
+.modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(5, 6, 12, 0.72);
+    backdrop-filter: blur(18px) saturate(135%);
+    z-index: 1200;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1.5rem;
+    animation: modal-fade-in 180ms ease-out;
+}
+
+.modal {
+    background: rgba(9, 12, 28, 0.92);
+    border: 1px solid rgba(116, 143, 252, 0.35);
+    border-radius: 1.25rem;
+    width: min(960px, 100%);
+    max-height: calc(100vh - 3rem);
+    display: flex;
+    flex-direction: column;
+    box-shadow:
+        0 32px 48px -12px rgba(3, 6, 26, 0.55),
+        0 12px 24px -12px rgba(3, 6, 26, 0.7);
+    overflow: hidden;
+    transform-origin: top;
+    animation: modal-scale-in 220ms cubic-bezier(0.18, 0.89, 0.32, 1.28);
+}
+
+.modal--wide {
+    width: min(1040px, 100%);
+}
+
+.modal__header {
+    padding: 1.25rem 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    background: linear-gradient(135deg, rgba(21, 25, 51, 0.95), rgba(10, 13, 30, 0.95));
+    border-bottom: 1px solid rgba(116, 143, 252, 0.25);
+}
+
+.modal__title {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.65rem;
+    font-size: 1.15rem;
+    font-weight: 600;
+}
+
+.modal__title i {
+    color: var(--accent-300);
+}
+
+.modal__actions {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.modal__metric {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: 0.9rem;
+    color: var(--text-300);
+    background: rgba(116, 143, 252, 0.18);
+    padding: 0.35rem 0.75rem;
+    border-radius: 999px;
+    border: 1px solid rgba(116, 143, 252, 0.3);
+}
+
+.modal__close {
+    border: none;
+    background: rgba(21, 25, 51, 0.7);
+    color: var(--text-100);
+    width: 2.35rem;
+    height: 2.35rem;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.modal__close:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 10px 18px rgba(116, 143, 252, 0.3);
+}
+
+.modal__body {
+    padding: 1.25rem 1.5rem 1.5rem;
+    overflow-y: auto;
+    flex: 1;
+    display: flex;
+}
+
+.modal__table,
+.modal__loading,
+.modal__empty,
+.modal__error {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    text-align: center;
+}
+
+.modal__table {
+    align-items: stretch;
+}
+
+.modal__loading p {
+    margin: 0;
+    color: var(--text-300);
+}
+
+.modal__spinner {
+    width: 2.75rem;
+    height: 2.75rem;
+    border-radius: 999px;
+    border: 3px solid rgba(116, 143, 252, 0.28);
+    border-top-color: var(--accent-300);
+    animation: modal-spin 900ms linear infinite;
+}
+
+.modal__empty p,
+.modal__error p {
+    margin: 0;
+    color: var(--text-300);
+}
+
+.modal__error {
+    background: rgba(255, 107, 107, 0.08);
+    border: 1px solid rgba(255, 107, 107, 0.25);
+    border-radius: 0.85rem;
+    padding: 1.25rem;
+}
+
+.modal__error i {
+    font-size: 1.5rem;
+    color: var(--danger-400);
+}
+
+.modal__retry {
+    border: none;
+    border-radius: 999px;
+    padding: 0.5rem 1.4rem;
+    background: linear-gradient(135deg, var(--accent-500), var(--accent-300));
+    color: #05060c;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.modal__retry:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 12px 20px rgba(116, 143, 252, 0.35);
+}
+
+@media (max-width: 720px) {
+    .modal-overlay {
+        padding: 1rem;
+    }
+
+    .modal {
+        max-height: 100vh;
+    }
+
+    .modal__header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.75rem;
+    }
+
+    .modal__actions {
+        align-self: stretch;
+        justify-content: space-between;
+        width: 100%;
+    }
+}
+
+@keyframes modal-fade-in {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes modal-scale-in {
+    from {
+        opacity: 0;
+        transform: translateY(-16px) scale(0.96);
+    }
+
+    to {
+        opacity: 1;
+        transform: none;
+    }
+}
+
+@keyframes modal-spin {
+    to {
+        transform: rotate(360deg);
+    }
+}

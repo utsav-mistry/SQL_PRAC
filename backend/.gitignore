@@ -1,0 +1,33 @@
+# dependencies
+node_modules/
+
+# runtime / env
+.env
+.env.local
+*.env.*.local
+
+# logs
+logs/
+*.log
+debug.log
+
+# databases / dumps
+*.sql
+*.dump
+
+# coverage / build
+coverage/
+dist/
+.nyc_output/
+
+# lockfiles (if you prefer not to commit locks)
+pnpm-lock.yaml
+yarn.lock
+package-lock.json
+
+# editor
+.vscode/
+.idea/
+
+# OS
+.DS_Store

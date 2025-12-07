@@ -1,0 +1,46 @@
+:root {
+  --bg-900: #05060c;
+  --bg-800: #0d1020;
+  --bg-700: #151933;
+  --bg-600: #1f2447;
+  --accent-500: #5c7cfa;
+  --accent-400: #748ffc;
+  --accent-300: #91a7ff;
+  --accent-200: #bac8ff;
+  --text-100: #f8f9ff;
+  --text-300: #c7ccff;
+  --text-500: #a5acd9;
+  --danger-400: #ff6b6b;
+  font-family: 'Space Grotesk', system-ui, sans-serif;
+  color-scheme: dark;
+}
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+#root {
+  height: 100%;
+}
+
+body {
+  font-family: 'Space Grotesk', system-ui, sans-serif;
+  background: var(--bg-900);
+  color: var(--text-100);
+  line-height: 1.5;
+}
+
+body.modal-open {
+  overflow: hidden;
+}
+
+a {
+  color: inherit;
+}
+
+button {
+  font-family: inherit;
+}

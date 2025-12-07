@@ -1,0 +1,40 @@
+.error-box {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 1rem;
+    padding: 1rem 1.25rem;
+    background: rgba(255, 107, 107, 0.12);
+    border: 1px solid rgba(255, 107, 107, 0.35);
+    border-radius: 0.9rem;
+    color: var(--danger-400);
+    box-shadow: 0 18px 32px rgba(255, 107, 107, 0.15);
+}
+
+.error-box__title {
+    margin: 0;
+    font-size: 1.05rem;
+    font-weight: 600;
+}
+
+.error-box__message {
+    margin: 0.25rem 0 0;
+    color: var(--text-100);
+}
+
+.error-box__dismiss {
+    align-self: center;
+    border: none;
+    padding: 0.45rem 1rem;
+    border-radius: 999px;
+    font-weight: 600;
+    background: rgba(255, 107, 107, 0.22);
+    color: var(--danger-400);
+    cursor: pointer;
+    transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.error-box__dismiss:hover {
+    background: rgba(255, 107, 107, 0.32);
+    transform: translateY(-1px);
+}
