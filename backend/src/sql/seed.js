@@ -144,11 +144,11 @@ export const seedSandboxDatabase = async () => {
         const enrollmentsInsert = buildInsertValues(['student_id', 'course_id', 'grade'], ENROLLMENTS_ROWS);
         await client.query(`INSERT INTO enrollments (student_id, course_id, grade) VALUES ${enrollmentsInsert.placeholders};`, enrollmentsInsert.values);
 
-        await client.query('GRANT USAGE ON SCHEMA public TO aayush;');
-        await client.query('GRANT CREATE ON SCHEMA public TO aayush;');
+        await client.query('GRANT USAGE ON SCHEMA playground TO aayush;');
+        await client.query('GRANT CREATE ON SCHEMA playground TO aayush;');
 
-        await client.query('GRANT SELECT, INSERT, UPDATE, DELETE ON ALL TABLES IN SCHEMA public TO aayush;');
-        await client.query('GRANT USAGE, SELECT, UPDATE ON ALL SEQUENCES IN SCHEMA public TO aayush;');
+        await client.query('GRANT SELECT, INSERT, UPDATE, DELETE ON ALL TABLES IN SCHEMA playground TO aayush;');
+        await client.query('GRANT USAGE, SELECT, UPDATE ON ALL SEQUENCES IN SCHEMA playground TO aayush;');
 
         await client.query('ALTER DEFAULT PRIVILEGES GRANT SELECT, INSERT, UPDATE, DELETE ON TABLES TO aayush;');
         await client.query('ALTER DEFAULT PRIVILEGES GRANT USAGE, SELECT, UPDATE ON SEQUENCES TO aayush;');
