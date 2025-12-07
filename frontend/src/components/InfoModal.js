@@ -67,13 +67,18 @@ const InfoModal = () => {
                                         <h3 className="info-modal__subtitle">Repository</h3>
                                         <p className="info-modal__text">Browse the source:</p>
                                         <div style={{ marginTop: '0.5rem' }}>
-                                            <iframe
-                                                title="SQL_PRAC repo"
-                                                src="https://github.com/utsav-mistry/SQL_PRAC"
-                                                style={{ width: '100%', height: 260, border: '1px solid rgba(116, 143, 252, 0.15)', borderRadius: 8 }}
-                                            />
+                                            <a
+                                                href="https://github.com/utsav-mistry/SQL_PRAC"
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+                                                className="info-modal__docs-btn"
+                                                style={{ display: 'inline-flex', alignItems: 'center', gap: '0.6rem' }}
+                                            >
+                                                <i className="fa-brands fa-github" aria-hidden="true" />
+                                                <span>Browse repo</span>
+                                            </a>
                                             <p style={{ marginTop: 8, color: 'var(--text-500)', fontSize: 13 }}>
-                                                If the embed is blocked by the host, the link opens the repo in a new tab.
+                                                Opens the repository on GitHub in a new tab.
                                             </p>
                                         </div>
                                     </section>
