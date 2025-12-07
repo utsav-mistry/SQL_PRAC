@@ -40,7 +40,7 @@ const InfoModal = () => {
                                 onClick={() => setIsOpen(false)}
                                 aria-label="Close"
                             >
-                                ×
+                                <i class="fa-solid fa-arrow-right-from-bracket"></i>
                             </button>
                         </header>
 
