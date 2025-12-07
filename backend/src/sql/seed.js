@@ -1,5 +1,5 @@
 import { getAdminSandboxClient } from '../db/index.js';
-import { READONLY_TABLES } from '../constants/protected.js';
+
 
 const STUDENTS_ROWS = [
     { name: 'Aarav Patel', age: 19, city: 'Ahmedabad', grade: 'A' },
@@ -150,9 +150,6 @@ export const seedSandboxDatabase = async () => {
         await client.query('ALTER DEFAULT PRIVILEGES GRANT SELECT, INSERT, UPDATE, DELETE ON TABLES TO aayush;');
         await client.query('ALTER DEFAULT PRIVILEGES GRANT USAGE, SELECT, UPDATE ON SEQUENCES TO aayush;');
 
-        for (const table of READONLY_TABLES) {
-            await revokeAllMutations(client, table);
-        }
 
         await client.query('COMMIT');
     } catch (error) {
